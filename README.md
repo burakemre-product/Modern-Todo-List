@@ -20,6 +20,8 @@
 
 <img src="images/responsive1.png">
 
+<img src="images/responsive2.png">
+
 <img src="images/menu1.png">
 
 <img src="images/menu2.png">
