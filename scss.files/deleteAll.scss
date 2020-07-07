@@ -1,0 +1,45 @@
+@use "objects_scss/variables";
+
+#deleteAll-confirm-modal {
+    @include variables.modal-container;
+    left: 35%;
+    top: 25%;
+    width: 30%;
+    height: 31%;
+    overflow: auto; /* Enable scroll if needed */
+    border-style: solid;
+    border-color: rgba(253, 254, 254, 0.25);
+    border-width: 0.1px;
+    border-radius: 2px;
+    
+    #deleteAll-confirm-message {
+        position: relative;
+        margin: 35px 10px 10px 10px;
+        font-size: 1.5em;
+        color: rgb(169, 50, 38);
+    }
+
+    #cancel-deleteAll, #confirm-deleteAll {
+        @include variables.modal-member;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        color: teal;
+        width: 80%;
+        height: 20%;
+        float: none;
+
+        &:hover {
+            background-color: teal;
+            color: white;
+        }
+    }
+    
+    #cancel-deleteAll {
+        margin: 30px 15px 15px 15px;
+    }
+
+    #confirm-deleteAll {
+        margin: 10px 15px 15px 15px;
+    }
+
+
+}

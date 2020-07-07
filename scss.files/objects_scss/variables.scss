@@ -1,0 +1,75 @@
+$background_color1 : rgb(23, 32, 42);
+$dark_teal :  rgba(0,128,128,0.7);
+$light_teal : rgba(0,128,128,0.9);
+$search_color : rgb(211, 84, 0);
+
+$primary_font1 : Helvetica, sans-serif;
+
+$smallest_radius : 2px;
+$small_radius : 3px;
+$medium_radius : 4px;
+$big_radius : 5px;
+
+
+@mixin button($type) {
+    color: white;
+    border: none;
+    border-radius: $medium_radius;
+    cursor: pointer;
+    float: right;
+    padding: 6px 12px 6px 12px;
+    margin-top: 5px;
+    
+    @if $type == "confirm" {
+        background-color: $dark_teal;
+
+        &:hover {
+            background-color: $light_teal;
+        }
+    }
+    @else {
+        background-color: white;    
+    }
+}
+
+@mixin modal-container {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    overflow: auto; /* Enable scroll if needed */
+    // background-color: rgb(0,0,0); /* Fallback color */
+    // background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+@mixin modal-member {
+    position: relative;
+    background-color: $background-color1;
+    float: none;
+}
+
+@mixin form-col-25 {
+    float: left;
+    width: 25%;  
+}
+
+@mixin form-col-75 {
+    float: left;
+    width: 75%;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    border-radius: 2px;
+    width: 40%;
+    float: right;
+    margin-top: 20px;
+    font-size: 1.35em;
+    opacity: 0.8;
+    text-align: center;    
+}
+
+.display-none {
+    display: none;
+}

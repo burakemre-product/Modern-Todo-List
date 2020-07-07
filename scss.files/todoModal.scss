@@ -1,0 +1,199 @@
+// @use "variables" as variables;
+@use "objects_scss/variables";
+@use "media";
+
+
+
+.modal {
+    @include variables.modal-container;
+    background-color: rgba(0,0,0,0.95); /* Black w/ opacity */
+    left: 0;
+    top: 0;
+    width: 100% ;/* Full width */
+    height: 100% ;/* Full height */
+
+    .modal-content {
+        @include variables.modal-member;
+        color: white;
+        padding: 0;
+        font-size: 1.2em;
+        top:10%;
+        width: 50%;
+        height: 80%;
+        margin: auto;
+        border-style: solid;
+        border-width: 1px;
+        border-color: rgb(28, 40, 51);
+        border-radius: 3px;
+        // border: none !important;
+        background-color: rgb(23, 32, 42);
+
+        @include media.medium-device {
+            width: 80%;
+        }
+
+        @include media.small-device {
+            width: 85%;
+        }
+
+        @include media.big-device {
+            width: 70%;
+        }
+        
+        
+        .modal-body-container {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+            background-color: inherit;
+            padding: 10px 10px 0px 10px;
+            margin: 10px 10px 10px 10px;
+            height: 97%;
+            // width: 90%;
+            /* width: 100%; */
+            column-gap: 15px;
+            row-gap: 15px;
+
+            .modal-header {
+                grid-column: 1 / 6;
+                grid-row: 1 / 2;
+                margin: 0px !important;
+            
+                .modal-topic {
+                    padding: 7px 7px;
+                    width: 100%;
+                    background-color: rgb(33, 47, 60 );
+                    font-size: 1.1em;
+                    font-weight: bold;
+                    border-radius: 4px;
+                    // border: 1px solid #888;
+                    border-style: solid;
+                    border-width: 1px;
+                    border-color: rgb(28, 40, 51);
+                    border-radius: 3px;
+                }
+            }
+
+            .modal-status-container {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+                border-radius: 4px;
+                background-color: inherit;
+                color: white;
+                font: 400 13.3333px Arial;
+                border: 0.5px solid #888;
+
+                @include media.small-device {
+                    grid-column: 1 / 6;
+                    grid-row: 2 / 3;
+                }
+
+                select {
+                    height: 100%;
+                    width: 90%;
+                    padding: 0px 20px 0px 20px !important;
+                    background-color: inherit;
+                    border: none;
+                    color: white;
+                }
+            }
+
+            .modal-value-container {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+                border-radius: 4px;
+                background-color: inherit;
+                // padding-left: 20px;
+                color: white;
+                font: 400 13.3333px Arial;
+                border: 0.5px solid #888;
+
+                @include media.small-device {
+                    grid-column: 1 / 6;
+                    grid-row: 3 / 4;
+                }
+
+                select {
+                    // width: 100%;
+                    height: 100%;
+                    width: 90%;
+                    padding: 0px 20px 0px 20px !important;
+                    background-color: inherit;
+                    border: none;
+                    color: white;
+                }
+            }
+
+            .modal-due-date {
+                grid-column: 1 / 2;
+                grid-row: 4 / 5;
+                border-radius: 4px;
+                border: 1px solid #888;
+                padding-left: 20px;
+                padding-right: 20px;
+                background-color:inherit;
+                color: white;
+                font: 400 13.3333px Arial;
+                border: 0.5px solid #888;
+
+                @include media.small-device {
+                    grid-column: 1 / 6;
+                    grid-row: 4 / 5;
+                }
+            }
+
+            .modal-commend {
+                grid-column: 2 / 6;
+                grid-row: 2 / 5;
+                border-radius: 4px;
+                padding: 10px;
+                color:rgb(211, 84, 0);
+                font: 400 13.3333px Arial; 
+                background-color: rgb(28, 40, 51);
+
+                @include media.small-device {
+                    grid-column: 1 / 6;
+                    grid-row : 5 / 8;
+                }
+
+                &::placeholder {
+                    color:rgb(211, 84, 0);
+                }
+            }
+
+            .modal-main {
+                grid-column: 1 / 6;
+                grid-row: 5 / 10;
+                padding: 10px;
+                font: 400 13.3333px Arial;
+                margin-top: 20px;
+                background-color: rgb(33, 47, 60 );
+                color: rgb(212, 230, 241);
+                border-style: solid;
+                border-width: 1px;
+                border-color: rgb(28, 40, 51);
+                border-radius: 3px;
+
+                @include media.small-device {
+                    grid-row: 8 / 15;
+                }
+            }
+
+            .save-button-container {
+                grid-column: 1 / 6;
+                // grid-row: 10 / 11;
+                margin-top: 10px;
+
+                @include media.small-device {
+                    grid-row: 15 / 16;
+                }
+
+                } .modal-save-button {
+                    @include variables.button(confirm);
+                    float: right;
+                }
+
+        }
+
+    }
+}
+

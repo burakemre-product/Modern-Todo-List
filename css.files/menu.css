@@ -1,0 +1,194 @@
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  border-radius: 2px;
+  width: 40%;
+  float: right;
+  margin-top: 20px;
+  font-size: 1.35em;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.display-none {
+  display: none;
+}
+
+#menu-modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  /* padding-top: 100px; Location of the box */
+  left: 20%;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+  text-align: center;
+}
+#menu-modal #change-value, #menu-modal #change-status, #menu-modal #logout, #menu-modal #delete-account {
+  position: relative;
+  /* background-color:teal; */
+  background-color: #17202a;
+  color: rgba(0, 128, 128, 0.7);
+  width: 50%;
+  height: 10%;
+  float: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4;
+  margin: 15px;
+  margin-bottom: 15px;
+}
+#menu-modal #change-value:hover, #menu-modal #change-status:hover {
+  background-color: rgba(0, 128, 128, 0.7);
+  color: white;
+}
+#menu-modal #logout:hover, #menu-modal #delete-account:hover {
+  background-color: red;
+  color: white;
+}
+#menu-modal #change-value {
+  margin-top: 50px;
+}
+
+#delete-account-modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  /* padding-top: 100px; Location of the box */
+  left: 0%;
+  bottom: 0;
+  width: 100%;
+  /* Full width */
+  height: 40%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  text-align: center;
+}
+#delete-account-modal #delete-warning {
+  font-size: 1.5em;
+  margin: 40px;
+  color: white;
+}
+#delete-account-modal #cancelbtn, #delete-account-modal #deletebtn {
+  position: relative;
+  background-color: #17202a;
+  color: teal;
+  width: 50%;
+  height: 20%;
+  float: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4;
+  margin-bottom: 15px;
+}
+#delete-account-modal #cancelbtn:hover {
+  background-color: teal;
+  color: white;
+}
+#delete-account-modal #deletebtn:hover {
+  background-color: red;
+  color: white;
+}
+
+#value-option-modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  /* padding-top: 100px; Location of the box */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /* Full width */
+  height: 40%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  text-align: center;
+}
+#value-option-modal #add-value-option, #value-option-modal #remove-value-option {
+  position: relative;
+  /* background-color:teal; */
+  background-color: #17202a;
+  color: teal;
+  width: 50%;
+  height: 20%;
+  float: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4;
+  margin-bottom: 15px;
+}
+#value-option-modal #add-value-option:hover, #value-option-modal #remove-value-option:hover {
+  background-color: teal;
+  color: white;
+}
+#value-option-modal #add-value-option {
+  margin-top: 50px;
+}
+
+#status-option-modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  /* padding-top: 100px; Location of the box */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /* Full width */
+  height: 40%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  text-align: center;
+}
+#status-option-modal #add-status-option, #status-option-modal #remove-status-option {
+  position: relative;
+  /* background-color:teal; */
+  background-color: #17202a;
+  color: teal;
+  width: 50%;
+  height: 20%;
+  float: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4;
+  margin-bottom: 15px;
+}
+#status-option-modal #add-status-option:hover, #status-option-modal #remove-status-option:hover {
+  background-color: teal;
+  color: white;
+}
+#status-option-modal #add-status-option {
+  margin-top: 50px;
+}

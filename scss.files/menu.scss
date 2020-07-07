@@ -1,0 +1,134 @@
+@use "objects_scss/variables" as variables;
+
+#menu-modal {
+    @include variables.modal-container;
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    left: 0%;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    text-align: center;
+
+    #change-value, #change-status, #logout, #delete-account{
+        @include variables.modal-member;
+        color: teal;
+        width: 50%;
+        height: 10%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        margin:15px;
+        margin-bottom: 15px;    
+        
+    }
+
+    #change-value:hover, #change-status:hover {
+        background-color: variables.$light_teal;
+        color: white;
+    }
+    
+    #logout:hover, #delete-account:hover {
+        background-color: rgb(146, 43, 33 );
+        color: white;
+    }
+    
+    #change-value {
+        margin-top: 50px;
+        
+    }
+
+}
+    
+
+#delete-account-modal {
+    @include variables.modal-container; 
+    left: 0%;
+    bottom: 0;
+    width: 100%; /* Full width */
+    height: 40%; /* Full height */
+    text-align: center;
+
+    #delete-warning {
+        font-size: 1.5em;
+        margin: 40px;
+        color: white;
+    }
+
+    #cancelbtn, #deletebtn {
+        @include variables.modal-member;
+        color: teal;
+        width: 50%;
+        height: 20%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        margin-bottom: 15px;
+
+    }
+
+    #cancelbtn:hover {
+        background-color: variables.$light_teal;
+        color: white;
+    }
+    
+    #deletebtn:hover {
+        background-color: rgb(146, 43, 33 );
+        color: white;
+    }    
+}
+
+#value-option-modal {
+    @include variables.modal-container;
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Full width */
+    height: 40%; /* Full height */
+    text-align: center;
+
+    #add-value-option, #remove-value-option {
+        @include variables.modal-member;
+        color: teal;
+        width: 50%;
+        height: 20%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        margin-bottom: 15px;
+    }
+
+    #add-value-option:hover, #remove-value-option:hover {
+        background-color: variables.$light_teal;
+        color: white;
+    }
+    
+    #add-value-option {
+        margin-top: 50px;
+    }
+}
+
+
+
+#status-option-modal {
+    @include variables.modal-container;
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Full width */
+    height: 40%; /* Full height */
+    text-align: center;
+
+    #add-status-option, #remove-status-option {
+        @include variables.modal-member;
+        position: relative;
+        /* background-color:teal; */
+        background-color: rgb(23, 32, 42);
+        color: teal;
+        width: 50%;
+        height: 20%;
+        float: none;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        margin-bottom: 15px;
+    }
+    
+    #add-status-option:hover, #remove-status-option:hover {
+        background-color: variables.$light_teal;
+        color: white;
+    }
+    
+    #add-status-option {
+        margin-top: 50px;
+    }
+}

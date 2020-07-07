@@ -1,0 +1,892 @@
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  border-radius: 2px;
+  width: 40%;
+  float: right;
+  margin-top: 20px;
+  font-size: 1.35em;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.display-none {
+  display: none;
+}
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.95);
+  /* Black w/ opacity */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+}
+.modal .modal-content {
+  position: relative;
+  background-color: #17202a;
+  float: none;
+  color: white;
+  padding: 0;
+  font-size: 1.2em;
+  top: 10%;
+  width: 50%;
+  height: 80%;
+  margin: auto;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #1c2833;
+  border-radius: 3px;
+  background-color: #17202a;
+}
+@media (max-width: 768px) {
+  .modal .modal-content {
+    width: 80%;
+  }
+}
+@media (max-width: 500px) {
+  .modal .modal-content {
+    width: 85%;
+  }
+}
+@media (max-width: 1025px) {
+  .modal .modal-content {
+    width: 70%;
+  }
+}
+.modal .modal-content .modal-body-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  background-color: inherit;
+  padding: 10px 10px 0px 10px;
+  margin: 10px 10px 10px 10px;
+  height: 97%;
+  /* width: 100%; */
+  column-gap: 15px;
+  row-gap: 15px;
+}
+.modal .modal-content .modal-body-container .modal-header {
+  grid-column: 1/6;
+  grid-row: 1/2;
+  margin: 0px !important;
+}
+.modal .modal-content .modal-body-container .modal-header .modal-topic {
+  padding: 7px 7px;
+  width: 100%;
+  background-color: #212f3c;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #1c2833;
+  border-radius: 3px;
+}
+.modal .modal-content .modal-body-container .modal-status-container {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  border-radius: 4px;
+  background-color: inherit;
+  color: white;
+  font: 400 13.3333px Arial;
+  border: 0.5px solid #888;
+}
+@media (max-width: 500px) {
+  .modal .modal-content .modal-body-container .modal-status-container {
+    grid-column: 1/6;
+    grid-row: 2/3;
+  }
+}
+.modal .modal-content .modal-body-container .modal-status-container select {
+  height: 100%;
+  width: 90%;
+  padding: 0px 20px 0px 20px !important;
+  background-color: inherit;
+  border: none;
+  color: white;
+}
+.modal .modal-content .modal-body-container .modal-value-container {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  border-radius: 4px;
+  background-color: inherit;
+  color: white;
+  font: 400 13.3333px Arial;
+  border: 0.5px solid #888;
+}
+@media (max-width: 500px) {
+  .modal .modal-content .modal-body-container .modal-value-container {
+    grid-column: 1/6;
+    grid-row: 3/4;
+  }
+}
+.modal .modal-content .modal-body-container .modal-value-container select {
+  height: 100%;
+  width: 90%;
+  padding: 0px 20px 0px 20px !important;
+  background-color: inherit;
+  border: none;
+  color: white;
+}
+.modal .modal-content .modal-body-container .modal-due-date {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  border-radius: 4px;
+  border: 1px solid #888;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: inherit;
+  color: white;
+  font: 400 13.3333px Arial;
+  border: 0.5px solid #888;
+}
+@media (max-width: 500px) {
+  .modal .modal-content .modal-body-container .modal-due-date {
+    grid-column: 1/6;
+    grid-row: 4/5;
+  }
+}
+.modal .modal-content .modal-body-container .modal-commend {
+  grid-column: 2/6;
+  grid-row: 2/5;
+  border-radius: 4px;
+  padding: 10px;
+  color: #d35400;
+  font: 400 13.3333px Arial;
+  background-color: #1c2833;
+}
+@media (max-width: 500px) {
+  .modal .modal-content .modal-body-container .modal-commend {
+    grid-column: 1/6;
+    grid-row: 5/8;
+  }
+}
+.modal .modal-content .modal-body-container .modal-commend::placeholder {
+  color: #d35400;
+}
+.modal .modal-content .modal-body-container .modal-main {
+  grid-column: 1/6;
+  grid-row: 5/10;
+  padding: 10px;
+  font: 400 13.3333px Arial;
+  margin-top: 20px;
+  background-color: #212f3c;
+  color: #d4e6f1;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #1c2833;
+  border-radius: 3px;
+}
+@media (max-width: 500px) {
+  .modal .modal-content .modal-body-container .modal-main {
+    grid-row: 8/15;
+  }
+}
+.modal .modal-content .modal-body-container .save-button-container {
+  grid-column: 1/6;
+  margin-top: 10px;
+}
+@media (max-width: 500px) {
+  .modal .modal-content .modal-body-container .save-button-container {
+    grid-row: 15/16;
+  }
+}
+.modal .modal-content .modal-body-container .modal-save-button {
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  padding: 6px 12px 6px 12px;
+  margin-top: 5px;
+  background-color: rgba(0, 128, 128, 0.7);
+  float: right;
+}
+.modal .modal-content .modal-body-container .modal-save-button:hover {
+  background-color: rgba(0, 128, 128, 0.9);
+}
+
+.accordion-item {
+  position: relative;
+  color: white;
+  font-weight: bold;
+  background-color: #18202a;
+  text-align: center;
+  /* background-color: teal; */
+  /* opacity: 0.8; */
+  cursor: pointer;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  padding: 10px !important;
+  line-height: 3px;
+  margin-bottom: 0px;
+  font: 400 13.3333px Arial;
+  font-size: 1.5rem;
+}
+.accordion-item:hover {
+  background-color: black;
+}
+.accordion-item::after {
+  content: "";
+  transition: transform 0.25s ease 0.1s;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: 10px;
+  height: 10px;
+  transform: translateY(-50%) rotate(-45deg);
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+.accordion-item.active {
+  background-color: #000;
+}
+.accordion-item.active.after {
+  transform: translateY(-50%) rotate(45deg);
+  color: teal;
+}
+
+.open {
+  overflow-y: scroll;
+  display: block;
+}
+
+#form-container {
+  border-radius: 5px;
+  padding: 20px;
+  display: grid;
+  grid-template-areas: auto;
+  background-color: inherit;
+  display: none;
+  margin-top: 5px !important;
+  margin-bottom: 15px;
+}
+#form-container .form-row {
+  margin-bottom: px;
+}
+#form-container .form-row .form-col-25 {
+  float: left;
+  width: 25%;
+  padding: 5px 50px 0px 25px;
+  margin-bottom: 0px;
+  font-size: 1.3rem;
+}
+@media (max-width: 500px) {
+  #form-container .form-row .form-col-25 {
+    width: 100%;
+    padding: 5px 50px 0px 5px;
+  }
+}
+#form-container .form-row .form-col-75 {
+  float: left;
+  width: 75%;
+  margin-bottom: 3px;
+  font-size: 1.3rem;
+  font-family: arial;
+}
+@media (max-width: 500px) {
+  #form-container .form-row .form-col-75 {
+    width: 100%;
+  }
+}
+#form-container .form-row .form-col-75 ::placeholder {
+  font-size: 1.2rem;
+}
+#form-container .form-row input[type=text], #form-container .form-row textarea, #form-container .form-row select {
+  padding: 3px 7px 3px 8px;
+  font: arial;
+}
+#form-container .form-row input[type=date] {
+  padding: 0px 0px 0px 6px;
+  font: arial;
+}
+#form-container .form-row #todo-value, #form-container .form-row #todo-family-1 {
+  padding-left: 4px;
+}
+#form-container .form-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#form-container .button-container {
+  margin-top: 5px;
+  font-size: 1.3rem;
+  font: 400 1.2rem Arial;
+}
+#form-container .button-container input {
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  padding: 6px 12px 6px 12px;
+  margin-top: 5px;
+  background-color: rgba(0, 128, 128, 0.7);
+}
+#form-container .button-container input:hover {
+  background-color: rgba(0, 128, 128, 0.9);
+}
+#form-container.open {
+  overflow-y: scroll;
+  display: block;
+}
+
+#add-family-container {
+  background-color: inherit;
+  text-align: center;
+  float: left;
+  display: none;
+  padding: 20px;
+  margin-top: 5px !important;
+}
+#add-family-container input[name=add-family-button] {
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  padding: 6px 12px 6px 12px;
+  margin-top: 5px;
+  background-color: rgba(0, 128, 128, 0.7);
+}
+#add-family-container input[name=add-family-button]:hover {
+  background-color: rgba(0, 128, 128, 0.9);
+}
+#add-family-container input[name=add-family-input] {
+  width: 100%;
+  margin: 10px 5px 10px 0px;
+  background-color: inherit;
+  color: white;
+  font-size: 1.3rem;
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid;
+}
+#add-family-container input[name=add-family-input]::placeholder {
+  font-size: 1.2rem;
+}
+
+html {
+  background-color: #17202a;
+  font-size: 10px;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+body #frame {
+  width: 70vw;
+  height: auto;
+  color: white;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #1c2833;
+  border-radius: 3px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: auto;
+  padding: 10px;
+  box-shadow: 10px 10px 46px 0px #516e67;
+  background-color: #17202a;
+}
+@media (max-width: 768px) {
+  body #frame {
+    width: 90%;
+  }
+}
+@media (max-width: 500px) {
+  body #frame {
+    width: 90%;
+  }
+}
+body #frame .part {
+  border-style: solid;
+  border-color: rgba(253, 254, 254, 0.25);
+  border-width: 0.1px;
+  border-radius: 2px;
+  box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 90%;
+}
+body #frame header {
+  height: 50px;
+  margin: 15px;
+  padding: 5px;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  background: #232526;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #414345, #232526);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+body #frame header #menu {
+  float: left;
+  font-size: 2em;
+}
+body #frame header #menu:hover {
+  cursor: pointer;
+  color: black;
+}
+body #frame header p {
+  display: inline-block;
+  width: auto;
+  padding-right: 40px;
+  padding-top: 11px;
+  text-decoration: underline;
+}
+body #frame .search-container {
+  width: 40% !important;
+  background-color: inherit;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  body #frame .search-container {
+    width: 70% !important;
+  }
+}
+body #frame .search-container input[name=todo-search] {
+  width: 90%;
+  margin: 10px 5px 10px 0px;
+  background-color: inherit;
+  color: #d35400;
+  font-size: 1.3rem;
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid;
+}
+body #frame .search-container input[name=todo-search]::placeholder {
+  color: #d35400;
+  font-size: 1.2rem;
+}
+body #frame .search-container .search-icon {
+  margin: 5px 5px;
+  cursor: pointer;
+}
+body #frame .search-container .search-icon:hover {
+  color: #d35400;
+}
+body #frame .first-message {
+  background-color: black;
+  border-radius: 3px;
+  box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 90%;
+  padding: 30px;
+  text-align: center;
+  opacity: 0.7;
+}
+body #frame .first-message h1 {
+  padding-bottom: 10px;
+  font: 400 1.7rem Arial;
+}
+body #frame .first-message p {
+  font: 400 1.2rem Arial;
+  color: teal;
+}
+
+#families-container {
+  border: none !important;
+}
+#families-container .family-container {
+  background-color: inherit;
+  width: 49.93%;
+  height: 60px;
+  color: white;
+  border: inherit;
+  float: left;
+  margin: 25px, 0px, 25px, 0px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #1c2833;
+  border-radius: 3px;
+}
+@media (max-width: 500px) {
+  #families-container .family-container {
+    width: 100%;
+  }
+}
+#families-container .family-container .family {
+  padding: 24px 5px 24px 20px;
+  font-size: 1.3em;
+  width: 80%;
+  float: left;
+  font-weight: bold;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-line-clamp: 1;
+  /* number of lines to show */
+  text-overflow: ellipsis;
+}
+#families-container .family-container i.delete-icon-family {
+  float: left;
+  margin: 16px 5px 16px 30px;
+}
+@media (max-width: 500px) {
+  #families-container .family-container i.delete-icon-family {
+    margin: 16px 5px 16px 10px;
+  }
+}
+#families-container .family-container i.delete-icon-family:hover {
+  color: #d35400;
+}
+#families-container .family-container:hover {
+  background-color: black;
+}
+
+.ul-modal-container {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  margin: 0px;
+  width: 100% !important;
+  /* Full width */
+  height: 100% !important;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+}
+.ul-modal-container .todo-container {
+  position: relative;
+  width: 70%;
+  height: 70%;
+  left: 15%;
+  top: 15%;
+  padding: 30px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #1c2833;
+  border-radius: 3px;
+  background-color: #17202a;
+}
+@media (max-width: 500px) {
+  .ul-modal-container .todo-container {
+    width: 85%;
+    left: 7.5%;
+  }
+}
+.ul-modal-container .todo-container li {
+  font-size: 1.5em;
+  height: 30px;
+  margin-top: 20px;
+  font-size: 1.1em;
+  padding: 5x, 5px, 5px, 7px;
+  color: black;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+  background-color: inherit;
+  border-style: solid;
+  border-color: rgba(253, 254, 254, 0.25);
+  border-width: 0.1px;
+  border-radius: 2px;
+  box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.ul-modal-container .todo-container li:nth-child(even) {
+  background: #232526;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #414345, #232526);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.ul-modal-container .todo-container li:hover {
+  background: black;
+}
+.ul-modal-container .todo-container li p.todoN {
+  float: left;
+  padding: 5px;
+  color: white;
+  width: 93%;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-left: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@media (max-width: 500px) {
+  .ul-modal-container .todo-container li p.todoN {
+    width: 85%;
+  }
+}
+.ul-modal-container .todo-container li i.delete-icon-todo {
+  float: right;
+  margin: 2px;
+  color: white;
+}
+.ul-modal-container .todo-container li i.delete-icon-todo:hover {
+  color: #d35400;
+}
+.ul-modal-container .todo-container li #button-container {
+  background-color: inherit;
+}
+.ul-modal-container .todo-container li #button-container input[name=delete-all] {
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  padding: 6px 12px 6px 12px;
+  margin-top: 5px;
+  background-color: white;
+  margin-left: Opx;
+}
+.ul-modal-container .todo-container li #button-container input[name=menu] {
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  padding: 6px 12px 6px 12px;
+  margin-top: 5px;
+  background-color: white;
+  float: left;
+}
+
+#deleteAll-confirm-modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  overflow: auto;
+  /* Enable scroll if needed */
+  left: 35%;
+  top: 25%;
+  width: 30%;
+  height: 31%;
+  overflow: auto;
+  /* Enable scroll if needed */
+  border-style: solid;
+  border-color: rgba(253, 254, 254, 0.25);
+  border-width: 0.1px;
+  border-radius: 2px;
+}
+#deleteAll-confirm-modal #deleteAll-confirm-message {
+  position: relative;
+  margin: 35px 10px 10px 10px;
+  font-size: 1.5em;
+  color: #a93226;
+}
+#deleteAll-confirm-modal #cancel-deleteAll, #deleteAll-confirm-modal #confirm-deleteAll {
+  position: relative;
+  background-color: #17202a;
+  float: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: teal;
+  width: 80%;
+  height: 20%;
+  float: none;
+}
+#deleteAll-confirm-modal #cancel-deleteAll:hover, #deleteAll-confirm-modal #confirm-deleteAll:hover {
+  background-color: teal;
+  color: white;
+}
+#deleteAll-confirm-modal #cancel-deleteAll {
+  margin: 30px 15px 15px 15px;
+}
+#deleteAll-confirm-modal #confirm-deleteAll {
+  margin: 10px 15px 15px 15px;
+}
+
+#menu-modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+  left: 0%;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  text-align: center;
+}
+#menu-modal #change-value, #menu-modal #change-status, #menu-modal #logout, #menu-modal #delete-account {
+  position: relative;
+  background-color: #17202a;
+  float: none;
+  color: teal;
+  width: 50%;
+  height: 10%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 15px;
+  margin-bottom: 15px;
+}
+#menu-modal #change-value:hover, #menu-modal #change-status:hover {
+  background-color: rgba(0, 128, 128, 0.9);
+  color: white;
+}
+#menu-modal #logout:hover, #menu-modal #delete-account:hover {
+  background-color: #922b21;
+  color: white;
+}
+#menu-modal #change-value {
+  margin-top: 50px;
+}
+
+#delete-account-modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  overflow: auto;
+  /* Enable scroll if needed */
+  left: 0%;
+  bottom: 0;
+  width: 100%;
+  /* Full width */
+  height: 40%;
+  /* Full height */
+  text-align: center;
+}
+#delete-account-modal #delete-warning {
+  font-size: 1.5em;
+  margin: 40px;
+  color: white;
+}
+#delete-account-modal #cancelbtn, #delete-account-modal #deletebtn {
+  position: relative;
+  background-color: #17202a;
+  float: none;
+  color: teal;
+  width: 50%;
+  height: 20%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 15px;
+}
+#delete-account-modal #cancelbtn:hover {
+  background-color: rgba(0, 128, 128, 0.9);
+  color: white;
+}
+#delete-account-modal #deletebtn:hover {
+  background-color: #922b21;
+  color: white;
+}
+
+#value-option-modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  overflow: auto;
+  /* Enable scroll if needed */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /* Full width */
+  height: 40%;
+  /* Full height */
+  text-align: center;
+}
+#value-option-modal #add-value-option, #value-option-modal #remove-value-option {
+  position: relative;
+  background-color: #17202a;
+  float: none;
+  color: teal;
+  width: 50%;
+  height: 20%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 15px;
+}
+#value-option-modal #add-value-option:hover, #value-option-modal #remove-value-option:hover {
+  background-color: rgba(0, 128, 128, 0.9);
+  color: white;
+}
+#value-option-modal #add-value-option {
+  margin-top: 50px;
+}
+
+#status-option-modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  overflow: auto;
+  /* Enable scroll if needed */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /* Full width */
+  height: 40%;
+  /* Full height */
+  text-align: center;
+}
+#status-option-modal #add-status-option, #status-option-modal #remove-status-option {
+  position: relative;
+  background-color: #17202a;
+  float: none;
+  position: relative;
+  /* background-color:teal; */
+  background-color: #17202a;
+  color: teal;
+  width: 50%;
+  height: 20%;
+  float: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 15px;
+}
+#status-option-modal #add-status-option:hover, #status-option-modal #remove-status-option:hover {
+  background-color: rgba(0, 128, 128, 0.9);
+  color: white;
+}
+#status-option-modal #add-status-option {
+  margin-top: 50px;
+}

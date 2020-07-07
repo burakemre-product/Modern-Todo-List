@@ -1,0 +1,183 @@
+@use "objects_scss/variables";
+@use "media";
+
+.accordion-item {
+    position: relative;
+    color:white;
+    font-weight: bold;
+    background-color: #18202a;
+    text-align: center;
+    /* background-color: teal; */
+    /* opacity: 0.8; */
+    cursor: pointer;
+    // border-bottom: 2px solid; 
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.75);
+    border-radius: 5px;
+    // // border-width: 0.1px;
+    padding: 10px !important;
+    line-height: 3px;
+    margin-bottom: 0px;
+    font: 400 13.3333px Arial;
+    font-size: 1.5rem;
+
+    &:hover {
+        background-color: black;
+    }
+
+    &::after {
+        content: '';
+        transition: transform 0.25s ease 0.1s;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        width: 10px;
+        height: 10px;
+        transform: translateY(-50%) rotate(-45deg);
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        
+        
+    }
+
+    &.active {
+        background-color: #000;
+    
+        
+        // arrow
+        &.after {
+          transform: translateY(-50%) rotate(45deg);
+          color: teal;
+        }
+      }
+
+}
+
+
+.open {
+    overflow-y: scroll;
+    display: block;
+      
+}
+
+
+
+
+#form-container {
+    border-radius: 5px;
+    padding: 20px;
+    display: grid;
+    grid-template-areas: auto;
+    background-color: inherit;
+    display: none;
+    margin-top: 5px !important;
+    margin-bottom: 15px;
+    
+    .form-row{
+        margin-bottom: px;
+        
+        .form-col-25 {
+            @include variables.form-col-25;
+            padding: 5px 50px 0px 25px;
+            margin-bottom: 0px;
+            font-size: 1.3rem;
+
+            @include media.small-device {
+                width: 100%;
+                padding: 5px 50px 0px 5px;
+            
+            }
+        }
+            
+        .form-col-75 {
+            @include variables.form-col-75;
+            margin-bottom: 3px;            
+            font-size: 1.3rem;
+            // font-family: 'Lato', sans-serif;
+            font-family: arial;
+
+            @include media.small-device {
+                width: 100%;
+            
+            }
+
+            ::placeholder{
+                font-size: 1.2rem;
+            }          
+        }
+
+        input[type=text], textarea, select {
+            padding: 3px 7px 3px 8px;
+            // font: inherit;
+            font: arial;
+            
+        }
+
+        input[type=date] {
+            padding: 0px 0px 0px 6px;
+            font: arial;
+        }
+            
+        #todo-value, #todo-family-1{
+            padding-left: 4px;
+        }
+
+        &:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+
+    }
+        
+    .button-container {
+        margin-top: 5px;
+        font-size: 1.3rem;
+        font: 400 1.2rem Arial;
+
+        input {
+            @include variables.button(confirm)
+        }
+        
+    }
+    
+    &.open {
+        overflow-y: scroll;
+        display: block;                
+        
+    }
+
+
+}
+
+
+#add-family-container {
+    background-color: inherit;
+    text-align: center;
+    float: left;
+    display: none;
+    padding: 20px;
+    margin-top: 5px !important;
+
+    input[name=add-family-button]{
+        // float: right;
+        // margin: 10px 10px 10px 0px;
+        @include variables.button(confirm)
+    }
+
+    input[name=add-family-input] {
+        width: 100%;
+        margin: 10px 5px 10px 0px;
+        background-color: inherit;
+        color:white; 
+        font-size: 1.3rem;
+        padding: 5px;
+        border: none;
+        border-bottom: 1px solid;
+        
+        &::placeholder{
+            // color:white;
+            font-size: 1.2rem;
+        }
+    }
+}

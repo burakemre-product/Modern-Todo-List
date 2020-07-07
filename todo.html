@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+
+    <link rel="stylesheet" href="/scss.files/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>   
+    <div id= "frame">
+        <header class="part" id="header">
+            <div>
+                <p> To Do List </p>
+                <i class="material-icons" id="menu">widgets</i>  
+            </div>
+         </header>
+        <h1 id="add-todo" class="accordion-item part">Add Todo</h1>
+        <form action="" id="form-container" class="part" action="index.php">
+            <div class="form-row">
+                <label for="todo-topic" class="form-col-25">Todo Topic</label>
+                <input type="text" id="todo-topic" name="todo-topic" placeholder="Type the topic" class="form-col-75">
+            </div>
+            <div class="form-row">  
+                <label for="todo-main" class="form-col-25">Todo Main</label>
+                <textarea rows="1" name="todo-main" id="todo-main" placeholder="Type your todo" class="form-col-75"></textarea>
+            </div>
+            <div class="form-row">
+                <label for="Value" class="form-col-25">Value</label>
+                <select type="value" id="todo-value" class="form-col-75">
+                    <option value="Must Do">Must Do</option>
+                    <option value="Should Do">Should Do</option>
+                    <option value="Could Do">Could Do</option>
+                    <option value="Idea">Idea</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="due-date" class="form-col-25">Due Date</label>
+                <input type="date" id="due-date" name="due-date" class="form-col-75">
+            </div>
+            <div class="form-row">
+                <label for="todo-family-1" class="form-col-25">Todo Family</label>
+                <select type="value" id="todo-family-1" class="form-col-75"></select>
+            </div>
+            <div class="form-row button-container"> 
+                <input type="submit" value="Add Todo" name="add-todo">
+            </div> 
+        </form>
+        <h1 id="add-family" class="accordion-item part">Add Family</h1>
+        <form action="" id="add-family-container" class="part add-family-container">
+            <input type="text" name="add-family-input" id="add-family-input" placeholder="Add Family">
+            <input type="submit" value="Add Family" name="add-family-button">
+        </form>
+        <form action="" id="search-container" class="part search-container">
+            <i class="material-icons search-icon">search</i>
+            <input type="text" name="todo-search" id="todo-search" placeholder="Search for a todo">
+        </form>
+        <div class="first-message">
+            <h1>Let's add your first Todo</h1>
+            <p>Tips; Todo Topic and Todo Family areas are required. Therefore, you need to create a family first.</p>
+        </div>
+        <div id="families-container"class="part">
+        </div>
+    </div> 
+    <div id="deleteAll-confirm-modal">
+        <p id="deleteAll-confirm-message">Are you sure you want to delete all todos</p>
+        <input type="button" name="cancel-delete" id="cancel-deleteAll" value="Cancel">
+        <input type="button" name="confirm-delete" id="confirm-deleteAll" value="Confirm Delete All">
+    </div>
+    <div id="menu-modal">
+         <input type="button" name="change-value" id="change-value" value="Set Todo Value">
+        <input type="button" name="change-status" id="change-status" value="Set Todo Status">
+        <input type="button" name="logout" id="logout" value="Log Out">
+        <input type="button" name="delete-account" id="delete-account" value="Delete Account">
+    </div>    
+    <div id="delete-account-modal">
+        <p id="delete-warning">Are you sure you want to delete your account?</p>   
+        <input type="button" id="cancelbtn" value="Cancel"></input>
+        <input type="button" id="deletebtn" value="Delete"></input>
+    </div>
+    <div id="value-option-modal">
+        <input type="button" name="add-value-option" id="add-value-option" value="Add Value">
+        <input type="button" name="remove-value-option" id="remove-value-option" value="Remove Value">
+    </div>
+    <div id="status-option-modal">
+        <input type="button" name="add-status-option" id="add-status-option" value="Add Status">
+        <input type="button" name="remove-status-option" id="remove-status-option" value="Remove Status">
+    </div>
+    <script src="/javaScript.files/uiReactive.js"></script>
+    <script src="/javaScript.files/storage.js"></script>
+    <script src="/javaScript.files/ui.js"></script>
+    <script src="/javaScript.files/todos.js"></script>
+    <script src="/javaScript.files/project.js"></script>
+    <script src="/javaScript.files/todotraining.js"></script>
+</body>
+</html>
