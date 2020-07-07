@@ -4,6 +4,8 @@
 
 <img src="images/add-family.png">
 
+<img src="images/delete-family.png">
+
 <img src="images/add-todo.png">
 
 <img src="images/todos-in-family.png">
