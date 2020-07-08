@@ -6,7 +6,9 @@
 
 <img src="images/delete-family.png">
 
-<img src="images/add-todo.png">
+<img src="images/add_todo.png">
+
+<img src="images/warning.png">
 
 <img src="images/todos-in-family.png">
 
